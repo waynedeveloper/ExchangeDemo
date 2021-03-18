@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="item"
+            type="com.waynelau.exchangedemo.data.model.CurrencyInfo" />
+
+        <variable
+            name="vm"
+            type="com.waynelau.exchangedemo.ui.exchange.CurrencyListViewModel" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp">
+
+        <TextView
+            android:id="@+id/tv_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            tools:text="C"
+            android:text="@{item.firstNameIndex}"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_round_grey"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Crypto.com"
+            android:text="@{item.name}"
+            android:textSize="18sp"
+            android:textColor="@color/v_dark_grey"
+            android:layout_marginStart="18dp"
+            app:layout_constraintStart_toEndOf="@id/tv_icon"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="MCO"
+            android:text="@{item.symbol}"
+            android:textSize="18sp"
+            android:textColor="@color/dark_grey"
+            android:drawablePadding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_icon"
+            app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_right" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
